@@ -20,10 +20,10 @@ public class MonthlyPayment {
         double totalCostOfLoan = monthlyPayment * numberOfPayment;
         double totalInterest = totalCostOfLoan - loanAmount;
 
-        double monthlyInterest = ((annualInterestRate/numberOfPayment) * loanAmount)*10;
-        double principal = monthlyPayment - monthlyInterest;
+        double monthlyInterest;
+        double principal;
         double beginningBalance = loanAmount;
-        double endingBalance = beginningBalance-principal;
+        double endingBalance;
 
         System.out.println("monthlyPayment: " + monthlyPayment);
         System.out.println("numberOfPayment: " + numberOfPayment);
@@ -34,7 +34,7 @@ public class MonthlyPayment {
         System.out.printf("\n%-15s%-13s%-18s%-16s%-10s%-17s%-14s","Payment-Number","Payment-Date","Beginning-Balance","Monthly-Payment","Principal","Monthly-Interest","Ending-Balance");
         for (int i = 1; i <= numberOfPayment; i++) {
             startDateOfLoan = startDateOfLoan.plusMonths(1);
-            String formattedDate = String.format("%1$td.%1$tm.%1$ty", startDateOfLoan);
+            String formattedDate = String.format("%1$td.%1$tm.20%1$ty", startDateOfLoan);
 
             monthlyInterest = ((annualInterestRate/numberOfPayment) * beginningBalance)*10;
             principal = monthlyPayment - monthlyInterest;
