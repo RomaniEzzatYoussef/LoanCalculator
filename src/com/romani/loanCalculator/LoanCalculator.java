@@ -1,15 +1,24 @@
 package com.romani.loanCalculator;
 
 import java.time.LocalDate;
+import java.util.Scanner;
 
 
-public class MonthlyPayment {
+public class LoanCalculator {
 
     public static void main(String[] args) {
 
-        double loanAmount = 1000000;
-        double annualInterestRate = 0.16;
-        int loanPeriodInYears = 10;
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter loan amount: ");
+        double loanAmount = input.nextDouble();
+
+        System.out.print("Enter annual interest rate(like 0.16): ");
+        double annualInterestRate = input.nextDouble();
+
+        System.out.print("Enter loan period in years: ");
+        int loanPeriodInYears = input.nextInt();
+
         LocalDate startDateOfLoan = LocalDate.now();
 
         double monthlyInterestRate = annualInterestRate/12;
